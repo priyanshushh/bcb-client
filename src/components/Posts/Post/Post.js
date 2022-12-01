@@ -7,7 +7,6 @@ import {
   Button,
   Typography,
   ButtonBase,
-  Divider,
 } from "@material-ui/core";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import ThumbUpAltOutlined from "@material-ui/icons/ThumbUpAltOutlined";

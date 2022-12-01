@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { deepPurple } from "@material-ui/core/colors";
-import { Backdrop } from "@material-ui/core";
+// import { deepPurple } from "@material-ui/core/colors";
+// import { Backdrop } from "@material-ui/core";
 export default makeStyles((theme) => ({
   appBar: {
     // borderRadius: 5,

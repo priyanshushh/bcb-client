@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Container,
   Grid,
@@ -11,7 +11,7 @@ import {
 import Posts from "../Posts/Posts";
 import Forms from "../Form/Form";
 import Pagination from "../Pagination";
-import { getPosts, getPostsBySearch } from "../../acitons/posts";
+import { getPostsBySearch } from "../../acitons/posts";
 import useStyles from "./styles";
 import { useDispatch } from "react-redux";
 import ChipInput from "material-ui-chip-input";

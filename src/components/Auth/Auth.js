@@ -14,7 +14,7 @@ import Input from "./Input";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { signup, signin } from "../../acitons/auth";
-import style from "../Posts/Post/style";
+// import style from "../Posts/Post/style";
 import FileBase from "react-file-base64";
 
 const initialstate = {

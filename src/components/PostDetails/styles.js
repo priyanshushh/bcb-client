@@ -63,7 +63,6 @@ export default makeStyles((theme) => ({
   },
 
   recomendedPosts: {
-    backgroundColor: "#f4f4f4",
     display: "flex",
     alignItems: "center",
     justifyContent: "start",

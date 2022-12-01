@@ -16,7 +16,7 @@ const User = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const classes = useStyles();
 
-  const { posts, isLoading } = useSelector((state) => state.posts);
+  const { posts } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
 
   useEffect(() => {

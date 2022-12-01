@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   Paper,
   Typography,
   CircularProgress,
   Divider,
-  Button,
 } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import draftToHtml from "draftjs-to-html";
+// import draftToHtml from "draftjs-to-html";
 import moment from "moment";
-import { disqus_config } from "./CommentBox";
+import disqus_config from "./CommentBox";
 import useStyles from "./styles";
-import { convertToRaw } from "draft-js";
+// import { convertToRaw } from "draft-js";
 import { getPost, getPostsBySearch } from "../../acitons/posts";
 function PostDetails() {
   const { post, posts, isLoading } = useSelector((state) => state.posts);
