@@ -9,7 +9,7 @@ const Navbar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   // console.log(user);
   const dispatch = useDispatch();
-  // const location = useLocation();
+  const location = useLocation();
   const logout = () => {
     dispatch({ type: "LOGOUT" });
     window.location = "/";
@@ -22,8 +22,7 @@ const Navbar = () => {
       if (decodedToken.exp * 1000 < new Date().getTime()) logout();
     }
     setUser(JSON.parse(localStorage.getItem("profile")));
-  }, [logout]);
-  //location goes on square bracket
+  }, [location]);
   return (
     <AppBar
       className={classes.appBar}

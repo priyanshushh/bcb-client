@@ -32,7 +32,7 @@ function PostDetails() {
   }
   useEffect(() => {
     dispatch(getPost(id));
-  }, [id, dispatch]);
+  }, [id]);
 
   useEffect(() => {
     if (post) {
@@ -43,7 +43,7 @@ function PostDetails() {
         })
       );
     }
-  }, [post, dispatch]);
+  }, [post]);
 
   if (!post) return null;
   if (isLoading)

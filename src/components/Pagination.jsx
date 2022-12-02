@@ -11,8 +11,7 @@ const Paginate = ({ page }) => {
     if (page) {
       dispatch(getPosts(page));
     }
-  }, [page, dispatch]);
-  //we can remove dispatch from array above
+  }, [page]);
   const { numberOfPages } = useSelector((state) => state.posts);
   return (
     <Pagination
