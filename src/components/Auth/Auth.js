@@ -66,8 +66,7 @@ const Auth = () => {
   useEffect(() => {
     /* global google*/
     google.accounts.id.initialize({
-      client_id:
-        "355675739023-qqmee5i9a7625kgaqqhiptsgdieojtc2.apps.googleusercontent.com",
+      client_id: "enter your own google client id",
       callback: handlecallbackresp,
     });
     google.accounts.id.renderButton(document.getElementById("signinDiv"), {
