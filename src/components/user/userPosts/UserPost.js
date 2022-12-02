@@ -11,7 +11,7 @@ import {
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import ThumbUpAltOutlined from "@material-ui/icons/ThumbUpAltOutlined";
 // import DeleteIcon from "@material-ui/icons/DeleteOutline";
-import EditIcon from "@material-ui/icons/Edit";
+// import EditIcon from "@material-ui/icons/Edit";
 import moment from "moment";
 import useStyles from "./styles";
 import { useDispatch } from "react-redux";
