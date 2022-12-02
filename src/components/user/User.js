@@ -18,6 +18,15 @@ const User = () => {
 
   const { posts } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
+  const [usersPosts, setUsersPosts] = useState([]);
+  let postsuser = [];
+  {
+    posts
+      ? (postsuser = posts.filter(
+          (post) => post.creator === (user.result._id || user.result.sub)
+        ))
+      : (postsuser = []);
+  }
 
   useEffect(() => {
     dispatch(
@@ -26,6 +35,7 @@ const User = () => {
         name: user.result.name,
       })
     );
+    setUsersPosts(postsuser);
   }, []);
 
   const logout = () => {
@@ -34,6 +44,7 @@ const User = () => {
     setUser(null);
   };
   // console.log(posts);
+
   return (
     <Container maxWidth="xl" className={classes.mainContainer}>
       <Grid item xs={12} sm={12} lg={12} className={classes.about}>
@@ -66,26 +77,18 @@ const User = () => {
           src={user.result.picture || user.result.profile}
         />
       </Grid>
-
       <Divider style={{ margin: "20px 0", backgroundColor: "white" }} />
       <Typography variant="h4" style={{ color: "white", margin: "20px" }}>
         Your Posts -
       </Typography>
-      {posts ? (
-        <Grid container alignItems="center" spacing={3}>
-          {posts.map((post) => (
-            <div style={{ display: "flex", flexWrap: "wrap" }}>
-              {post.creator === (user.result._id || user.result.sub) && (
-                <UserPost post={post} elevation={10} />
-              )}
-            </div>
-          ))}
-        </Grid>
-      ) : (
-        <Typography variant="h4" style={{ color: "white", margin: "20px" }}>
-          No Posts Yet...
-        </Typography>
-      )}
+      <Grid container alignItems="center" spacing={3}>
+        {usersPosts.map((post) => (
+          <Grid key={post._id} item xs={12} sm={12} md={6} lg={4}>
+            <UserPost post={post} elevation={10} />
+          </Grid>
+        ))}
+      </Grid>
+
       <Button
         variant="contained"
         style={{
