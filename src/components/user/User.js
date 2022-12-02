@@ -16,26 +16,24 @@ const User = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const classes = useStyles();
 
-  const { posts } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
   const [usersPosts, setUsersPosts] = useState([]);
   let postsuser = [];
-
-  posts
-    ? (postsuser = posts.filter(
-        (post) => post.creator === (user.result._id || user.result.sub)
-      ))
-    : (postsuser = []);
 
   useEffect(() => {
     dispatch(
       getPostsForUserF({
         id: user.result._id || user.result.sub,
-        name: user.result.name,
       })
     );
     setUsersPosts(postsuser);
-  }, []);
+  }, [user]);
+  const { posts } = useSelector((state) => state.posts);
+  posts
+    ? (postsuser = posts.filter(
+        (post) => post.creator === (user.result._id || user.result.sub)
+      ))
+    : (postsuser = []);
 
   const logout = () => {
     dispatch({ type: "LOGOUT" });

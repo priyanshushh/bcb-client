@@ -53,7 +53,7 @@ export const getPostsForUserF = (SearchQuery) => async (dispatch) => {
     const {
       data: { data },
     } = await api.fetchPostsForUser(SearchQuery);
-    console.log(data);
+    // console.log(data);
     dispatch({ type: FETCH_FOR_USER, payload: data });
   } catch (error) {
     console.log(error);

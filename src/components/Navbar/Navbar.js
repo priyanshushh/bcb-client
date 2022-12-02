@@ -47,9 +47,7 @@ const Navbar = () => {
               alt={user.result.name}
               src={user.result.picture || user.result.profile}
               component={Link}
-              to={`/posts/userr?id=${user.result.sub || user.result._id}&name=${
-                user.result.name
-              } `}
+              to={`/posts/userr?id=${user.result.sub || user.result._id}`}
             />
             {/* <Typography className={classes.user} variant="body1">
               {user.result.given_name}

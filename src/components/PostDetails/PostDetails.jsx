@@ -245,8 +245,8 @@ function PostDetails() {
 
         <div>
           <div id="disqus_thread">
-            {disqus_config(id)}
-            {/* <disqus_config id={id} /> */}
+            {/* {disqus_config(id)} */}
+            <disqus_config id={id} />
           </div>
 
           <noscript>

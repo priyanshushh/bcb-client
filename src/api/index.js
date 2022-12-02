@@ -20,7 +20,7 @@ export const fetchPostsBySearch = (searchQuery) =>
     }`
   );
 export const fetchPostsForUser = (SearchQuery) =>
-  API.get(`/posts/userr?id=${SearchQuery.id}&name=${SearchQuery.name}`);
+  API.get(`/posts/userr?id=${SearchQuery.id}`);
 export const createPost = (newPost) => API.post("/posts", newPost);
 export const likePost = (id) => API.patch(`/posts/${id}/likePost`);
 export const updatePost = (id, updatedPost) =>
