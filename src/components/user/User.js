@@ -20,13 +20,12 @@ const User = () => {
   const dispatch = useDispatch();
   const [usersPosts, setUsersPosts] = useState([]);
   let postsuser = [];
-  {
-    posts
-      ? (postsuser = posts.filter(
-          (post) => post.creator === (user.result._id || user.result.sub)
-        ))
-      : (postsuser = []);
-  }
+
+  posts
+    ? (postsuser = posts.filter(
+        (post) => post.creator === (user.result._id || user.result.sub)
+      ))
+    : (postsuser = []);
 
   useEffect(() => {
     dispatch(
@@ -36,7 +35,7 @@ const User = () => {
       })
     );
     setUsersPosts(postsuser);
-  }, []);
+  }, [dispatch, postsuser]);
 
   const logout = () => {
     dispatch({ type: "LOGOUT" });

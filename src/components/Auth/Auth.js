@@ -74,7 +74,7 @@ const Auth = () => {
       theme: "dark",
       size: "large",
     });
-  }, []);
+  }, [handlecallbackresp]);
 
   return (
     <Container component="main" maxWidth="xs">

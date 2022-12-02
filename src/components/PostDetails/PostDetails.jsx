@@ -32,7 +32,7 @@ function PostDetails() {
   }
   useEffect(() => {
     dispatch(getPost(id));
-  }, [id]);
+  }, [id, dispatch]);
 
   useEffect(() => {
     if (post) {
@@ -43,7 +43,7 @@ function PostDetails() {
         })
       );
     }
-  }, [post]);
+  }, [post, dispatch]);
 
   if (!post) return null;
   if (isLoading)
@@ -137,7 +137,11 @@ function PostDetails() {
             </Typography>
           </div>
           <div className={classes.imageSection}>
-            <img className={classes.media} src={post.selectedFile} />
+            <img
+              className={classes.media}
+              src={post.selectedFile}
+              alt="cover picture"
+            />
           </div>
         </div>
         {/* {console.log(recomendedPosts)} */}
@@ -223,6 +227,7 @@ function PostDetails() {
                       <img
                         src={selectedFile}
                         width="100%"
+                        alt="cover pic"
                         height="130px"
                         style={{
                           borderRadius: "6px",
@@ -240,7 +245,8 @@ function PostDetails() {
 
         <div>
           <div id="disqus_thread">
-            <disqus_config id={id} />
+            {disqus_config(id)}
+            {/* <disqus_config id={id} /> */}
           </div>
 
           <noscript>
