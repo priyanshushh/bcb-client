@@ -10,7 +10,6 @@ import {
 } from "@material-ui/core";
 import UserPost from "./userPosts/UserPost.js";
 import useStyles from "./styles";
-import EmailIcon from "@material-ui/icons/Email";
 import { getPostsForUserF } from "../../acitons/posts";
 const User = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
@@ -35,7 +34,7 @@ const User = () => {
       })
     );
     setUsersPosts(postsuser);
-  }, [dispatch, postsuser]);
+  }, [dispatch, postsuser, user.result._id, user.result.sub, user.result.name]);
 
   const logout = () => {
     dispatch({ type: "LOGOUT" });
@@ -53,7 +52,6 @@ const User = () => {
           </Typography>
           <Typography className={classes.email} gutterBottom>
             {user.result.email}
-            <EmailIcon style={{ height: "18px" }} />
           </Typography>
           <Typography vairanit="body1" className={classes.bio}>
             {user.result.bio}
